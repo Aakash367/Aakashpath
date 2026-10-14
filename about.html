@@ -68,7 +68,7 @@ var fallback = setTimeout(loadLinkedIn, 8000);
       .tl-eyebrow::before{display:none}
    </style>
    <div id="scroll-progress-bar" aria-hidden="true"></div>
-   <!--#include virtual="partials/header.html" -->
+   <div id="header-placeholder"></div>
    <div id="header-placeholder"></div><main>
    <section id="hero" class="about-hero">
       <div class="container">
@@ -481,7 +481,52 @@ var fallback = setTimeout(loadLinkedIn, 8000);
          </div>
       </div>
    </section>
-   </main><!--#include virtual="partials/footer.html" -->
+   </main><div id="footer-placeholder"></div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // innerHTML does not run <script> tags, so re-create them to execute
+    function runScripts(container) {
+        container.querySelectorAll("script").forEach(function (old) {
+            var s = document.createElement("script");
+            for (var i = 0; i < old.attributes.length; i++) s.setAttribute(old.attributes[i].name, old.attributes[i].value);
+            s.text = old.text;
+            old.parentNode.replaceChild(s, old);
+        });
+    }
+
+    var header = fetch("/partials/header.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load header");
+            }
+            return response.text();
+        })
+        .then(html => {
+            var el = document.getElementById("header-placeholder");
+            el.innerHTML = html;
+            runScripts(el);
+        })
+        .catch(error => console.error("Header error:", error));
+
+    var footer = fetch("/partials/footer.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load footer");
+            }
+            return response.text();
+        })
+        .then(html => {
+            document.getElementById("footer-placeholder").innerHTML = html;
+        })
+        .catch(error => console.error("Footer error:", error));
+
+    // Page scripts that bind to header/footer elements wait for this event
+    Promise.all([header, footer]).then(function () {
+        document.dispatchEvent(new Event("partials:loaded"));
+    });
+});
+</script>
+
    <div id="footer-placeholder"></div>
 <script>
 document.addEventListener("DOMContentLoaded", function () {

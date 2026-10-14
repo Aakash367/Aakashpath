@@ -37,4 +37,49 @@ var fallback = setTimeout(loadLinkedIn, 8000);
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"><!--#include virtual="partials/header.html" --><main><script src="https://jobsapi.ceipal.com/APISource/widget.js" data-ceipal-api-key="bXlYY3V0TkZ6UFFlZDAxL3ZmTFpCQT09" data-ceipal-career-portal-id="Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09"></script><div id="example-widget-container"></div></main><!--#include virtual="partials/footer.html" --><script src="js/scripts.js"></script><script id="embed-js" src="https://perzo-cdn.s3.us-east-1.amazonaws.com/assets/wws/js/8/personify.js" async></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"><div id="header-placeholder"></div><main><script src="https://jobsapi.ceipal.com/APISource/widget.js" data-ceipal-api-key="bXlYY3V0TkZ6UFFlZDAxL3ZmTFpCQT09" data-ceipal-career-portal-id="Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09"></script><div id="example-widget-container"></div></main><div id="footer-placeholder"></div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // innerHTML does not run <script> tags, so re-create them to execute
+    function runScripts(container) {
+        container.querySelectorAll("script").forEach(function (old) {
+            var s = document.createElement("script");
+            for (var i = 0; i < old.attributes.length; i++) s.setAttribute(old.attributes[i].name, old.attributes[i].value);
+            s.text = old.text;
+            old.parentNode.replaceChild(s, old);
+        });
+    }
+
+    var header = fetch("/partials/header.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load header");
+            }
+            return response.text();
+        })
+        .then(html => {
+            var el = document.getElementById("header-placeholder");
+            el.innerHTML = html;
+            runScripts(el);
+        })
+        .catch(error => console.error("Header error:", error));
+
+    var footer = fetch("/partials/footer.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load footer");
+            }
+            return response.text();
+        })
+        .then(html => {
+            document.getElementById("footer-placeholder").innerHTML = html;
+        })
+        .catch(error => console.error("Footer error:", error));
+
+    // Page scripts that bind to header/footer elements wait for this event
+    Promise.all([header, footer]).then(function () {
+        document.dispatchEvent(new Event("partials:loaded"));
+    });
+});
+</script>
+<script src="js/scripts.js"></script><script id="embed-js" src="https://perzo-cdn.s3.us-east-1.amazonaws.com/assets/wws/js/8/personify.js" async></script>
