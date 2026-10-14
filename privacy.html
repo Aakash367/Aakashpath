@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    var header = fetch("/partials/header.html")
+    var header = fetch("partials/header.html")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to load header");
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Header error:", error));
 
-    var footer = fetch("/partials/footer.html")
+    var footer = fetch("partials/footer.html")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to load footer");
