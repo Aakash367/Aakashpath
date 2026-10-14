@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 440" width="560" height="440" role="img" aria-label="A cute robot sitting on a rock, holding a map and looking confused next to a wooden signpost">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ddd6f5"/>
+      <stop offset="55%" stop-color="#ede8fb"/>
+      <stop offset="100%" stop-color="#f5f3ff"/>
+    </linearGradient>
+    <linearGradient id="mtn1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#c4b5fd"/>
+    </linearGradient>
+    <linearGradient id="mtn2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#a5b4fc"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#86efac"/>
+      <stop offset="100%" stop-color="#4ade80"/>
+    </linearGradient>
+    <filter id="fs" x="-12%" y="-12%" width="124%" height="124%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="rgba(0,0,0,0.11)"/>
+    </filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ─── SKY ─── -->
+  <rect width="560" height="440" fill="url(#sky)"/>
+
+  <!-- Clouds -->
+  <ellipse cx="72"  cy="68"  rx="44" ry="20" fill="white" opacity="0.65"/>
+  <ellipse cx="102" cy="58"  rx="30" ry="18" fill="white" opacity="0.65"/>
+  <ellipse cx="46"  cy="64"  rx="24" ry="14" fill="white" opacity="0.65"/>
+  <ellipse cx="490" cy="55"  rx="36" ry="16" fill="white" opacity="0.5"/>
+  <ellipse cx="518" cy="46"  rx="24" ry="14" fill="white" opacity="0.5"/>
+  <ellipse cx="200" cy="42"  rx="28" ry="13" fill="white" opacity="0.4"/>
+
+  <!-- ─── FAR MOUNTAINS ─── -->
+  <polygon points="0,368 0,240 90,120 185,215 275,82 375,195 460,100 560,175 560,368" fill="url(#mtn1)" opacity="0.55"/>
+  <!-- snow caps -->
+  <polygon points="275,82 258,128 292,128" fill="white" opacity="0.55"/>
+  <polygon points="460,100 445,138 475,138" fill="white" opacity="0.45"/>
+  <polygon points="90,120 76,158 104,158" fill="white" opacity="0.4"/>
+
+  <!-- ─── MID HILLS ─── -->
+  <polygon points="0,368 0,285 110,200 210,270 320,165 420,248 525,170 560,210 560,368" fill="url(#mtn2)" opacity="0.45"/>
+
+  <!-- ─── GROUND ─── -->
+  <rect x="0" y="368" width="560" height="72" fill="url(#grass)"/>
+  <ellipse cx="280" cy="368" rx="310" ry="20" fill="#a3e4b0" opacity="0.5"/>
+
+  <!-- ─── TREES ─── -->
+  <polygon points="18,370 40,316 62,370" fill="#15803d" opacity="0.82"/>
+  <rect x="37" y="366" width="8" height="14" rx="2" fill="#78350f"/>
+  <polygon points="8,372 24,330 40,372" fill="#16a34a" opacity="0.6"/>
+
+  <polygon points="502,372 520,318 538,372" fill="#15803d" opacity="0.72"/>
+  <rect x="517" y="367" width="7" height="12" rx="2" fill="#78350f"/>
+  <polygon points="480,374 494,338 508,374" fill="#16a34a" opacity="0.55"/>
+
+  <!-- ─── FLOWERS ─── -->
+  <circle cx="82"  cy="370" r="5" fill="#c084fc" opacity="0.85"/>
+  <circle cx="91"  cy="375" r="4" fill="#a78bfa" opacity="0.75"/>
+  <circle cx="74"  cy="376" r="3" fill="#e9d5ff" opacity="0.8"/>
+  <circle cx="470" cy="372" r="5" fill="#c084fc" opacity="0.7"/>
+  <circle cx="478" cy="377" r="3" fill="#a78bfa" opacity="0.6"/>
+  <circle cx="460" cy="376" r="4" fill="#ddd6f5" opacity="0.7"/>
+
+  <!-- ─── WINDING PATH on ground ─── -->
+  <path d="M0,395 Q130,380 260,385 Q350,388 430,378" stroke="#d4b896" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.28"/>
+
+  <!-- ════════════════════════
+       SIGNPOST
+  ════════════════════════ -->
+  <!-- Post -->
+  <rect x="144" y="140" width="13" height="232" rx="6" fill="#92400e"/>
+  <ellipse cx="150.5" cy="140" rx="8" ry="5" fill="#78350f"/>
+  <rect x="143" y="364" width="17" height="10" rx="4" fill="#5c2808"/>
+
+  <!-- Sign 1 — AEM Consulting → -->
+  <path d="M48,143 L218,143 L234,157 L218,171 L48,171 Z" fill="#d4a574" filter="url(#fs)"/>
+  <path d="M48,143 L218,143 L234,157 L218,171 L48,171 Z" fill="none" stroke="#92400e" stroke-width="1.5"/>
+  <line x1="55" y1="150" x2="215" y2="150" stroke="rgba(0,0,0,0.07)" stroke-width="0.8"/>
+  <line x1="55" y1="163" x2="215" y2="163" stroke="rgba(0,0,0,0.07)" stroke-width="0.8"/>
+  <text x="64" y="161" font-family="'Inter',Arial,sans-serif" font-size="12" font-weight="700" fill="#3b1500">AEM Consulting →</text>
+
+  <!-- Sign 2 — Our Work → -->
+  <path d="M48,179 L212,179 L228,193 L212,207 L48,207 Z" fill="#c8a070" filter="url(#fs)"/>
+  <path d="M48,179 L212,179 L228,193 L212,207 L48,207 Z" fill="none" stroke="#92400e" stroke-width="1.5"/>
+  <line x1="55" y1="186" x2="209" y2="186" stroke="rgba(0,0,0,0.07)" stroke-width="0.8"/>
+  <line x1="55" y1="199" x2="209" y2="199" stroke="rgba(0,0,0,0.07)" stroke-width="0.8"/>
+  <text x="64" y="197" font-family="'Inter',Arial,sans-serif" font-size="12" font-weight="700" fill="#3b1500">Our Work →</text>
+
+  <!-- Sign 3 — Perzo → -->
+  <path d="M48,215 L206,215 L222,229 L206,243 L48,243 Z" fill="#d4a574" filter="url(#fs)"/>
+  <path d="M48,215 L206,215 L222,229 L206,243 L48,243 Z" fill="none" stroke="#92400e" stroke-width="1.5"/>
+  <line x1="55" y1="222" x2="203" y2="222" stroke="rgba(0,0,0,0.07)" stroke-width="0.8"/>
+  <line x1="55" y1="235" x2="203" y2="235" stroke="rgba(0,0,0,0.07)" stroke-width="0.8"/>
+  <text x="64" y="233" font-family="'Inter',Arial,sans-serif" font-size="12" font-weight="700" fill="#3b1500">Perzo →</text>
+
+  <!-- Sign 4 — ← Homepage (points LEFT) -->
+  <path d="M252,251 L68,251 L52,265 L68,279 L252,279 Z" fill="#c8a070" filter="url(#fs)"/>
+  <path d="M252,251 L68,251 L52,265 L68,279 L252,279 Z" fill="none" stroke="#92400e" stroke-width="1.5"/>
+  <line x1="72" y1="258" x2="248" y2="258" stroke="rgba(0,0,0,0.07)" stroke-width="0.8"/>
+  <line x1="72" y1="271" x2="248" y2="271" stroke="rgba(0,0,0,0.07)" stroke-width="0.8"/>
+  <text x="76" y="269" font-family="'Inter',Arial,sans-serif" font-size="12" font-weight="700" fill="#3b1500">← Homepage</text>
+
+  <!-- ════════════════════════
+       ROCK
+  ════════════════════════ -->
+  <ellipse cx="392" cy="406" rx="96" ry="18" fill="rgba(0,0,0,0.10)"/>
+  <ellipse cx="392" cy="390" rx="92" ry="36" fill="#9ca3af"/>
+  <ellipse cx="392" cy="380" rx="88" ry="28" fill="#d1d5db"/>
+  <ellipse cx="392" cy="374" rx="82" ry="22" fill="#e5e7eb"/>
+  <ellipse cx="364" cy="366" rx="26" ry="7" fill="rgba(255,255,255,0.38)"/>
+  <!-- rock crevices -->
+  <path d="M340,370 Q360,376 375,372" stroke="#d1d5db" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <path d="M410,368 Q430,374 445,370" stroke="#d1d5db" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+  <!-- ════════════════════════
+       COFFEE MUG
+  ════════════════════════ -->
+  <rect x="458" y="352" width="32" height="26" rx="5" fill="#1e293b"/>
+  <rect x="460" y="354" width="28" height="22" rx="4" fill="#334155"/>
+  <rect x="458" y="352" width="32" height="6" rx="4" fill="#475569"/>
+  <path d="M490,357 Q504,357 504,365 Q504,373 490,373" fill="none" stroke="#1e293b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M468,350 Q470,343 468,336" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M476,350 Q478,341 476,334" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+  <!-- logo on mug -->
+  <polygon points="472,359 480,364 472,369" fill="#4f46e5" opacity="0.55"/>
+
+  <!-- ════════════════════════
+       ROBOT
+  ════════════════════════ -->
+
+  <!-- Left arm (angled down, holding map) -->
+  <rect x="308" y="292" width="38" height="15" rx="7" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.2" transform="rotate(18,327,299)"/>
+  <!-- Left hand -->
+  <ellipse cx="294" cy="312" rx="13" ry="11" fill="#cbd5e1" stroke="#b8c4d0" stroke-width="1.2"/>
+
+  <!-- Right arm (raised toward head in a thinking pose) -->
+  <rect x="418" y="274" width="36" height="15" rx="7" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.2" transform="rotate(-38,436,281)"/>
+  <!-- Right hand at face -->
+  <ellipse cx="446" cy="252" rx="13" ry="11" fill="#cbd5e1" stroke="#b8c4d0" stroke-width="1.2"/>
+
+  <!-- Torso -->
+  <rect x="337" y="285" width="86" height="88" rx="17" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2"/>
+  <!-- Shoulder caps -->
+  <ellipse cx="337" cy="298" rx="11" ry="9" fill="#dde3ea"/>
+  <ellipse cx="423" cy="298" rx="11" ry="9" fill="#dde3ea"/>
+  <!-- Chest inset panel -->
+  <rect x="349" y="297" width="62" height="54" rx="9" fill="#e2e8f0"/>
+  <!-- Indicator lights -->
+  <circle cx="364" cy="316" r="7" fill="#4f46e5" opacity="0.78" filter="url(#glow)"/>
+  <circle cx="380" cy="316" r="7" fill="#0B8FA3" opacity="0.78" filter="url(#glow)"/>
+  <circle cx="396" cy="316" r="7" fill="#fbbf24" opacity="0.78" filter="url(#glow)"/>
+  <!-- status bar -->
+  <rect x="355" y="331" width="50" height="7" rx="3" fill="#cbd5e1"/>
+  <!-- Purple accent stripe on torso -->
+  <rect x="337" y="285" width="86" height="7" rx="5" fill="#4f46e5" opacity="0.18"/>
+
+  <!-- Sitting legs -->
+  <rect x="346" y="360" width="26" height="20" rx="9" fill="#dde3ea" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="388" y="360" width="26" height="20" rx="9" fill="#dde3ea" stroke="#cbd5e1" stroke-width="1"/>
+  <!-- Boots/feet -->
+  <rect x="342" y="372" width="32" height="12" rx="6" fill="#d1d5db" stroke="#b8c4d0" stroke-width="1"/>
+  <rect x="386" y="372" width="32" height="12" rx="6" fill="#d1d5db" stroke="#b8c4d0" stroke-width="1"/>
+  <ellipse cx="358" cy="381" rx="18" ry="7" fill="#c8d0da"/>
+  <ellipse cx="402" cy="381" rx="18" ry="7" fill="#c8d0da"/>
+
+  <!-- Neck -->
+  <rect x="367" y="274" width="26" height="14" rx="6" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- ── HEAD ── -->
+  <rect x="323" y="192" width="114" height="88" rx="36" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2.5" filter="url(#fs)"/>
+  <!-- ear side bumps -->
+  <ellipse cx="323" cy="238" rx="11" ry="10" fill="#eaeff5" stroke="#dde3ea" stroke-width="1.5"/>
+  <ellipse cx="437" cy="238" rx="11" ry="10" fill="#eaeff5" stroke="#dde3ea" stroke-width="1.5"/>
+  <!-- purple top accent -->
+  <rect x="340" y="194" width="80" height="7" rx="3" fill="#4f46e5" opacity="0.55"/>
+
+  <!-- ── VISOR ── -->
+  <rect x="336" y="206" width="88" height="60" rx="20" fill="#0f172a"/>
+  <rect x="338" y="208" width="84" height="56" rx="18" fill="#111827"/>
+  <!-- visor shine -->
+  <ellipse cx="354" cy="218" rx="18" ry="7" fill="rgba(255,255,255,0.07)"/>
+
+  <!-- ── EYES ── -->
+  <!-- Left eye: normal open -->
+  <circle cx="364" cy="236" r="15" fill="#0a3040"/>
+  <circle cx="364" cy="236" r="11" fill="#0B8FA3" opacity="0.95" filter="url(#glow)"/>
+  <circle cx="364" cy="236" r="7"  fill="#2dd4bf"/>
+  <circle cx="364" cy="236" r="3.5" fill="#99f6e4" opacity="0.7"/>
+  <circle cx="368" cy="231"  r="3"  fill="rgba(255,255,255,0.55)"/>
+
+  <!-- Right eye: winking (cheeky expression) -->
+  <circle cx="396" cy="236" r="15" fill="#0a3040"/>
+  <!-- wink lid -->
+  <path d="M383,236 Q396,226 409,236" stroke="#2dd4bf" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- half-visible eye beneath -->
+  <ellipse cx="396" cy="240" rx="9" ry="5" fill="#0B8FA3" opacity="0.6"/>
+  <circle cx="400" cy="238" r="2" fill="rgba(255,255,255,0.4)"/>
+
+  <!-- smile -->
+  <path d="M355,254 Q380,266 405,254" stroke="#2dd4bf" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+
+  <!-- ── ANTENNA ── -->
+  <rect x="375" y="178" width="10" height="18" rx="5" fill="#cbd5e1"/>
+  <circle cx="380" cy="172" r="9" fill="#4f46e5" opacity="0.88" filter="url(#glow)"/>
+  <circle cx="380" cy="172" r="5"  fill="#818cf8"/>
+  <circle cx="380" cy="172" r="14" fill="#4f46e5" opacity="0.08"/>
+
+  <!-- ════════════════════════
+       MAP (left hand area)
+  ════════════════════════ -->
+  <g transform="rotate(-12,282,320)">
+    <rect x="248" y="300" width="78" height="58" rx="5" fill="#fef9e7" stroke="#fde68a" stroke-width="1.8" filter="url(#fs)"/>
+    <!-- fold crease -->
+    <line x1="287" y1="300" x2="287" y2="358" stroke="rgba(0,0,0,0.09)" stroke-width="1"/>
+    <line x1="248" y1="329" x2="326" y2="329" stroke="rgba(0,0,0,0.07)" stroke-width="1"/>
+    <!-- dashed path on map -->
+    <path d="M262,348 Q272,338 280,332 Q292,324 304,318 Q316,310 318,302" stroke="#6d28d9" stroke-width="2" fill="none" stroke-dasharray="4,3" stroke-linecap="round" opacity="0.45"/>
+    <!-- start dot -->
+    <circle cx="263" cy="348" r="4" fill="#4f46e5" opacity="0.55"/>
+    <!-- X mark (destination not found) -->
+    <line x1="314" y1="299" x2="323" y2="308" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="323" y1="299" x2="314" y2="308" stroke="#ef4444" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- "MAP" label -->
+    <text x="257" y="315" font-family="'Inter',Arial,sans-serif" font-size="9" font-weight="700" fill="#92400e" opacity="0.55">MAP</text>
+  </g>
+
+  <!-- ════════════════════════
+       "?" FLOATING
+  ════════════════════════ -->
+  <!-- small background circle for the ? -->
+  <circle cx="444" cy="194" r="20" fill="rgba(79,70,229,0.08)"/>
+  <text x="444" y="204" text-anchor="middle" font-family="'DM Serif Display',Georgia,'Times New Roman',serif" font-size="38" font-style="italic" fill="#4f46e5" opacity="0.9">?</text>
+
+  <!-- ════════════════════════
+       SPEECH BUBBLE
+  ════════════════════════ -->
+  <rect x="385" y="28" width="162" height="108" rx="16" fill="white" stroke="rgba(79,70,229,0.28)" stroke-width="1.8" filter="url(#fs)"/>
+  <!-- tail pointing down-left toward robot head -->
+  <path d="M403,136 L390,160 L426,136 Z" fill="white" stroke="rgba(79,70,229,0.28)" stroke-width="1.8" stroke-linejoin="round"/>
+  <!-- bubble text -->
+  <text x="466" y="60"  text-anchor="middle" font-family="'Inter',Arial,sans-serif" font-size="13" font-weight="700" fill="#111827">Recalculating...</text>
+  <text x="466" y="80"  text-anchor="middle" font-family="'Inter',Arial,sans-serif" font-size="12" fill="#4b5563">Still can't find</text>
+  <text x="466" y="98"  text-anchor="middle" font-family="'Inter',Arial,sans-serif" font-size="12" fill="#4b5563">this page.</text>
+  <!-- spinner -->
+  <circle cx="450" cy="118" r="8" fill="none" stroke="#e5e7eb" stroke-width="2.5"/>
+  <path d="M450 110 A8 8 0 0 1 458 118" stroke="#4f46e5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <text x="462" y="122" font-family="'Inter',Arial,sans-serif" font-size="9" fill="#9ca3af">loading...</text>
+</svg>

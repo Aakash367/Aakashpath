@@ -1,0 +1,82 @@
+﻿<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page Not Found | Onwardpath</title><meta name="description" content="The page you're looking for doesn't exist. Return to Onwardpath — AEM consulting and technical staffing."><meta name="robots" content="noindex,follow"><!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"><style>
+.not-found-section{min-height:calc(100vh - 120px);display:flex;align-items:center;padding:80px 40px;background:var(--white);position:relative;overflow:hidden}
+.not-found-grid{max-width:1200px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.not-found-content{position:relative;z-index:1}
+.not-found-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:24px}
+.not-found-eyebrow::before{content:'';display:inline-block;width:28px;height:3px;background:var(--purple);border-radius:2px}
+.not-found-code{font-family:var(--serif);font-size:clamp(72px,10vw,120px);line-height:1;color:var(--dark);margin:0 0 8px;letter-spacing:-.02em}
+.not-found-headline{font-family:var(--serif);font-size:clamp(26px,3vw,42px);line-height:1.15;color:var(--dark);font-weight:400;margin:0 0 20px}
+.not-found-headline em{font-style:italic;color:var(--purple)}
+.not-found-body{font-size:16px;line-height:1.7;color:var(--gray-600);margin:0 0 40px}
+.not-found-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.not-found-divider{width:48px;height:2px;background:var(--gray-300);border-radius:2px;margin:40px 0}
+.not-found-links-label{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--gray-500);margin-bottom:16px}
+.not-found-links{display:flex;flex-wrap:wrap;gap:10px}
+.not-found-link{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--gray-700);text-decoration:none;padding:9px 18px;border:1px solid var(--gray-300);border-radius:6px;transition:color .2s,border-color .2s,background .2s}
+.not-found-link:hover{color:var(--purple);border-color:var(--purple-border);background:var(--purple-bg)}
+.not-found-link svg{flex-shrink:0}
+.not-found-illustration{display:flex;align-items:center;justify-content:center}
+.not-found-illustration img{width:100%;max-width:520px;height:auto;display:block}
+@media(max-width:900px){
+  .not-found-grid{grid-template-columns:1fr;gap:40px}
+  .not-found-illustration{order:-1}
+  .not-found-illustration img{max-width:420px}
+  .not-found-section{padding:60px 32px}
+}
+@media(max-width:600px){
+  .not-found-section{padding:48px 20px;min-height:calc(100vh - 100px)}
+  .not-found-actions{flex-direction:column;align-items:flex-start}
+  .not-found-actions .btn-primary,.not-found-actions .btn-secondary{width:100%;justify-content:center;text-align:center}
+  .not-found-illustration img{max-width:100%}
+}
+</style>
+<!--#include virtual="partials/header.html" --><main>
+
+<section class="not-found-section">
+  <div class="not-found-grid">
+
+    <div class="not-found-content">
+      <div class="not-found-eyebrow">GPS is recalculating&hellip;</div>
+      <div class="not-found-code">404</div>
+      <h1 class="not-found-headline">Well. The path <em>ends here.</em></h1>
+      <p class="not-found-body">That URL doesn't exist — we checked twice, deployed a fix, rolled it back, and checked again. Whatever you were looking for took a wrong turn into 404 Land. The good news: everything else on this site works great.</p>
+      <div class="not-found-actions">
+        <a href="index.html" class="btn-primary">
+          Get me out of here
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="about.html#contact" class="btn-secondary">
+          Talk to an AEM expert
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <div class="not-found-divider"></div>
+      <div class="not-found-links-label">Pages that actually exist</div>
+      <div class="not-found-links">
+        <a href="consulting.html" class="not-found-link">Consulting <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="perzo.html" class="not-found-link">Perzo <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="ourwork.html" class="not-found-link">Our Work <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="/intelligence/" class="not-found-link">Intelligence <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="about.html" class="not-found-link">About <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+
+    <div class="not-found-illustration">
+      <img src="images/404-banner.svg" alt="Broken digital path — connected content nodes with a missing destination" width="560" height="440" loading="eager" decoding="async">
+    </div>
+
+  </div>
+</section>
+
+</main><!--#include virtual="partials/footer.html" -->
+<script src="js/scripts.js"></script>
