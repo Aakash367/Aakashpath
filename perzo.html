@@ -1,6 +1,8 @@
 ﻿<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Perzo — Anonymous Member Personalization for Healthcare Portals | Onwardpath</title><meta name="description" content="Perzo personalizes anonymous member portal sessions using behavioral signals — no PII required. Reduce call center volume and improve digital self-service for health plans and PBMs."><meta name="keywords" content="AEM staffing, AEM developers for hire,AEM resources, AEM contract, AEM fulltime, anonymous member personalization, health plan member portal, call deflection, member engagement, AEM personalization, healthcare portal personalization, Perzo, PBM digital experience">
 <!--LINKEDIN INSIGHT TAG START (deferred until user interaction, falls back after 8s) -->
-   <script id='embed-js' src="https://perzo-dev-cdn.s3.amazonaws.com/assets/wws/js/169/personify.js" async></script>
+   <!-- Perzo: store persona cookies at path=/ so Reset works when the site is served from a subfolder (/Aakashpath/) -->
+<script>(function(){var d=Object.getOwnPropertyDescriptor(Document.prototype,'cookie');d.set.call(document,'personaSelected=; max-age=0');d.set.call(document,'personaAutoAssignDismissed=; max-age=0');Object.defineProperty(document,'cookie',{configurable:true,get:function(){return d.get.call(document);},set:function(v){if(/^\s*(personaSelected|personaAutoAssignDismissed)=/.test(v)&&!/;\s*path=/i.test(v)){v+='; path=/';}d.set.call(document,v);}});})();</script>
+<script id='embed-js' src="https://perzo-dev-cdn.s3.amazonaws.com/assets/wws/js/169/personify.js" async></script>
 <script type="text/javascript">
 (function(){
 var fired = false;
