@@ -1,0 +1,516 @@
+<!doctype html><html lang="en"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Perzo — Anonymous Member Personalization for Healthcare Portals | Onwardpath</title><meta name="description" content="Perzo personalizes anonymous member portal sessions using behavioral signals — no PII required. Reduce call center volume and improve digital self-service for health plans and PBMs."><meta name="keywords" content="AEM staffing, AEM developers for hire,AEM resources, AEM contract, AEM fulltime, anonymous member personalization, health plan member portal, call deflection, member engagement, AEM personalization, healthcare portal personalization, Perzo, PBM digital experience">
+<!--LINKEDIN INSIGHT TAG START (deferred until user interaction, falls back after 8s) -->
+   <!-- Perzo: store persona cookies at path=/ so Reset works when the site is served from a subfolder (/Aakashpath/) -->
+<script>(function(){var d=Object.getOwnPropertyDescriptor(Document.prototype,'cookie');d.set.call(document,'personaSelected=; max-age=0');d.set.call(document,'personaAutoAssignDismissed=; max-age=0');Object.defineProperty(document,'cookie',{configurable:true,get:function(){return d.get.call(document);},set:function(v){if(/^\s*(personaSelected|personaAutoAssignDismissed)=/.test(v)&&!/;\s*path=/i.test(v)){v+='; path=/';}d.set.call(document,v);}});})();</script>
+<script id='embed-js' src="https://perzo-dev-cdn.s3.amazonaws.com/assets/wws/js/169/personify.js" async></script>
+<script type="text/javascript">
+(function(){
+var fired = false;
+function loadLinkedIn(){
+if (fired) return;
+fired = true;
+events.forEach(function(e){ document.removeEventListener(e, loadLinkedIn); });
+clearTimeout(fallback);
+_linkedin_partner_id = "2659204";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+}
+var events = ["scroll","mousemove","touchstart","keydown","click"];
+events.forEach(function(e){ document.addEventListener(e, loadLinkedIn, {passive:true}); });
+var fallback = setTimeout(loadLinkedIn, 8000);
+})();
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2659204&fmt=gif" />
+</noscript>
+<!--LINKEDIN INSIGHT TAG END-->
+
+<!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<!-- site CSS kept for header/footer partials -->
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/perzo-overrides.css">
+<style>
+/* ===== Perzo page redesign — everything scoped to main.pz ===== */
+main.pz{
+  --ink:#1B2340; --ink-2:#4A5372; --mist:#EEF1F6; --paper:#FFFFFF; --line:#D5DBE6;
+  --blue:#3355FF; --blue-soft:#E3E8FF; --pink:#FF4F7B; --pink-soft:#FFE4EB;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  display:block;background:var(--mist);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;
+}
+main.pz *{box-sizing:border-box}
+main.pz h1,main.pz h2,main.pz h3,main.pz p,main.pz ul,main.pz table{margin:0;padding:0}
+main.pz ul{list-style:none}
+main.pz img{max-width:100%;height:auto;display:block}
+main.pz a:focus-visible,main.pz button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+main.pz section{padding:0;margin:0;background:none}
+.pz-wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.pz-block{padding:112px 0}
+.pz-h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.4vw,56px);line-height:1.04;letter-spacing:-.025em;max-width:16ch;color:var(--ink)}
+.pz-lede{font-size:19px;color:var(--ink-2);max-width:58ch;margin-top:22px}
+
+/* buttons */
+.pz-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:17px;padding:16px 26px;border-radius:999px;text-decoration:none;transition:background .2s,color .2s}
+.pz-btn--solid{background:var(--blue);color:#fff}
+.pz-btn--solid:hover{background:var(--ink);color:#fff}
+.pz-btn--line{color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.pz-btn--line:hover{background:var(--ink);color:#fff}
+
+/* ===== HERO: the routing slip ===== */
+.pz-hero{padding:96px 0 80px}
+.pz-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.pz-h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,6.6vw,92px);line-height:.96;letter-spacing:-.035em;color:var(--ink)}
+.pz-hero-sub{font-size:20px;color:var(--ink-2);max-width:46ch;margin-top:28px}
+.pz-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+
+.pz-route{background:var(--paper);border-radius:28px;padding:30px;position:relative}
+.pz-route-head{display:flex;justify-content:space-between;align-items:center;font-size:15px;color:var(--ink-2);padding-bottom:18px;border-bottom:1px dashed var(--line)}
+.pz-live{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-weight:700}
+.pz-live::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pink)}
+.pz-signals{margin:18px 0 6px}
+.pz-signals li{display:flex;justify-content:space-between;gap:16px;padding:11px 0;font-size:16px;border-bottom:1px solid var(--mist)}
+.pz-signals span:first-child{color:var(--ink-2)}
+.pz-signals span:last-child{font-weight:700;text-align:right}
+.pz-match{margin-top:22px;background:var(--blue);color:#fff;border-radius:18px;padding:20px 22px}
+.pz-match small{display:block;font-size:14px;opacity:.8}
+.pz-match strong{display:block;font-family:var(--display);font-size:26px;font-weight:800;letter-spacing:-.01em;margin-top:2px}
+.pz-match p{font-size:15px;opacity:.9;margin-top:8px}
+
+/* one orchestrated load moment: signals resolve, then the match lands */
+@media (prefers-reduced-motion:no-preference){
+  .pz-signals li{opacity:0;transform:translateX(-8px);animation:pzIn .45s ease forwards}
+  .pz-signals li:nth-child(1){animation-delay:.25s}
+  .pz-signals li:nth-child(2){animation-delay:.5s}
+  .pz-signals li:nth-child(3){animation-delay:.75s}
+  .pz-signals li:nth-child(4){animation-delay:1s}
+  .pz-match{opacity:0;transform:scale(.96);animation:pzIn .5s cubic-bezier(.2,.8,.2,1) 1.45s forwards}
+  @keyframes pzIn{to{opacity:1;transform:none}}
+}
+
+.pz-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:88px;border-top:2px solid var(--ink)}
+.pz-fact{padding:26px 28px 0 0}
+.pz-fact b{display:block;font-family:var(--display);font-weight:800;font-size:44px;letter-spacing:-.03em;line-height:1}
+.pz-fact span{display:block;margin-top:10px;font-size:16px;color:var(--ink-2);max-width:30ch}
+
+/* ===== PROBLEM ===== */
+.pz-problem{background:var(--paper)}
+.pz-problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.pz-reasons{margin-top:36px;display:grid;gap:22px}
+.pz-reasons li{padding-left:28px;position:relative;max-width:48ch}
+.pz-reasons li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:3px;background:var(--pink)}
+.pz-split{background:var(--mist);border-radius:28px;padding:36px}
+.pz-split h3{font-family:var(--display);font-weight:600;font-size:20px;margin-bottom:24px}
+.pz-bar{display:flex;height:84px;border-radius:16px;overflow:hidden}
+.pz-bar div{display:flex;flex-direction:column;justify-content:center;padding:0 18px;color:#fff}
+.pz-bar b{font-family:var(--display);font-size:28px;font-weight:800;line-height:1}
+.pz-bar small{font-size:14px;opacity:.9}
+.pz-bar .self{flex:38;background:var(--blue)}
+.pz-bar .agent{flex:62;background:var(--pink)}
+.pz-bar-note{font-size:15px;color:var(--ink-2);margin-top:14px}
+.pz-cost{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.pz-cost div{background:var(--paper);border-radius:16px;padding:18px 20px}
+.pz-cost b{display:block;font-family:var(--display);font-size:26px;font-weight:800;letter-spacing:-.02em}
+.pz-cost span{font-size:15px;color:var(--ink-2)}
+.pz-cost .bad b{color:var(--pink)}
+.pz-cost .good b{color:var(--blue)}
+
+/* ===== SEGMENTS & PERSONAS (tabs) ===== */
+.pz-tabs{display:inline-flex;background:var(--paper);border-radius:999px;padding:6px;margin-top:40px;gap:4px}
+.pz-tab{font:600 17px var(--display);border:0;background:none;color:var(--ink-2);padding:12px 24px;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.pz-tab[aria-selected="true"]{background:var(--ink);color:#fff}
+.pz-panel{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center;margin-top:44px}
+.pz-panel[hidden]{display:none}
+.pz-panel h3{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.02em;line-height:1.1}
+.pz-panel > div > p{color:var(--ink-2);margin-top:16px;max-width:48ch}
+.pz-map{margin-top:28px;display:grid;gap:10px}
+.pz-map li{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;background:var(--paper);border-radius:14px;padding:14px 18px;font-size:16px}
+.pz-map li i{font-style:normal;color:var(--blue);font-weight:700}
+.pz-map li span:last-child{font-weight:700}
+.pz-map li.plain{grid-template-columns:1fr;color:var(--ink-2)}
+.pz-shot{background:var(--paper);border-radius:28px;padding:16px}
+.pz-shot img{border-radius:16px}
+.pz-shot figcaption{font-size:14px;color:var(--ink-2);padding:12px 6px 2px}
+.pz-priority{margin-top:56px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;border-left:6px solid var(--blue);background:var(--blue-soft);border-radius:0 20px 20px 0;padding:26px 30px}
+.pz-priority strong{font-family:var(--display);font-size:22px;font-weight:800;white-space:nowrap}
+.pz-priority p{max-width:68ch}
+.pz-priority p + p{color:var(--ink-2);font-size:16px;margin-top:8px}
+
+/* ===== ROI ===== */
+.pz-roi{background:var(--ink);color:#fff}
+.pz-roi .pz-h2{color:#fff}
+.pz-roi .pz-lede{color:#B8C0DA}
+.pz-roi-figs{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px}
+.pz-roi-fig{padding:0 24px 0 0;border-left:2px solid #39436A;padding-left:24px}
+.pz-roi-fig:first-child{border-left:0;padding-left:0}
+.pz-roi-fig b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(40px,4.8vw,64px);letter-spacing:-.04em;line-height:1;color:#fff}
+.pz-roi-fig.hot b{color:#8FA2FF}
+.pz-roi-fig span{display:block;margin-top:14px;font-size:15px;color:#B8C0DA;max-width:24ch}
+.pz-roi-fig em{display:block;font-style:normal;font-size:13px;color:#8890AE;margin-top:6px}
+.pz-scenarios{margin-top:72px;overflow-x:auto}
+.pz-scenarios h3{font-family:var(--display);font-weight:600;font-size:20px;margin-bottom:16px}
+.pz-scenarios table{width:100%;border-collapse:collapse;min-width:560px;font-size:16px}
+.pz-scenarios th{text-align:left;font-weight:400;color:#8890AE;padding:12px 16px 12px 0;border-bottom:1px solid #39436A}
+.pz-scenarios td{padding:18px 16px 18px 0;border-bottom:1px solid #2A3355}
+.pz-scenarios td:last-child{font-family:var(--display);font-weight:800;font-size:20px}
+.pz-scenarios tr.zero td{color:#8890AE}
+.pz-scenarios tr.zero td:last-child{color:var(--pink)}
+.pz-scenarios tr:not(.zero) td:last-child{color:#8FA2FF}
+.pz-table-note{font-size:14px;color:#8890AE;margin-top:16px}
+
+/* ===== EXPERIENCES ===== */
+.pz-exp{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.pz-exp article{background:var(--paper);border-radius:24px;padding:28px;display:flex;flex-direction:column}
+.pz-exp article:nth-child(1){grid-column:span 2;background:var(--blue);color:#fff}
+.pz-exp article:nth-child(1) p{color:#E3E8FF}
+.pz-exp article:nth-child(1) blockquote{background:rgba(255,255,255,.14);color:#fff}
+.pz-exp h3{font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:-.01em}
+.pz-exp p{color:var(--ink-2);font-size:16px;margin-top:10px}
+.pz-exp blockquote{margin:22px 0 0;margin-top:auto;padding:16px 18px;border-radius:14px;background:var(--mist);font-size:15px;line-height:1.5}
+.pz-exp p + blockquote{margin-top:22px}
+
+/* ===== AI ===== */
+.pz-ai{background:var(--paper)}
+.pz-ai-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:56px}
+.pz-draft{background:var(--mist);border-radius:28px;padding:28px}
+.pz-draft-ask{font-size:15px;color:var(--ink-2)}
+.pz-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pz-chips span{background:var(--paper);border-radius:999px;padding:7px 14px;font-size:14px}
+.pz-chips span b{font-weight:700}
+.pz-draft-out{margin-top:22px;background:var(--paper);border-radius:20px;padding:24px;border:2px solid var(--blue)}
+.pz-draft-out small{font-size:14px;color:var(--ink-2)}
+.pz-draft-out strong{display:block;font-family:var(--display);font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-top:6px}
+.pz-fakebtn{display:inline-block;margin-top:16px;background:var(--ink);color:#fff;border-radius:999px;padding:10px 18px;font-size:15px;font-weight:700}
+.pz-draft-status{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:15px;color:var(--ink-2)}
+.pz-draft-status b{color:var(--blue)}
+.pz-ai-list{display:grid;gap:30px}
+.pz-ai-list h3{font-family:var(--display);font-weight:800;font-size:22px}
+.pz-ai-list p{color:var(--ink-2);font-size:17px;margin-top:6px;max-width:52ch}
+
+/* ===== CTA ===== */
+.pz-cta{padding:0 0 112px;background:var(--paper)}
+.pz-cta-box{background:var(--pink);color:var(--ink);border-radius:40px;padding:80px 64px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end}
+.pz-cta-box .pz-h2{font-size:clamp(40px,5.6vw,76px);max-width:12ch}
+.pz-cta-box > div > p{font-size:19px;margin-top:20px;max-width:46ch}
+.pz-cta-box .pz-btn--solid{background:var(--ink)}
+.pz-cta-box .pz-btn--solid:hover{background:#fff;color:var(--ink)}
+.pz-perks{display:grid;gap:12px;margin-top:28px}
+.pz-perks li{background:rgba(255,255,255,.5);border-radius:14px;padding:14px 18px;font-weight:700;font-size:16px}
+.pz-cta-small{font-size:15px;margin-top:16px}
+.pz-badge{display:inline-block;background:var(--ink);color:#fff;border-radius:999px;padding:7px 14px;font-size:14px;margin-bottom:24px}
+
+/* ===== responsive ===== */
+@media (max-width:960px){
+  .pz-block{padding:80px 0}
+  .pz-hero-grid,.pz-problem-grid,.pz-panel,.pz-ai-grid,.pz-cta-box{grid-template-columns:1fr;gap:44px}
+  .pz-roi-figs{grid-template-columns:1fr 1fr;row-gap:40px}
+  .pz-roi-fig:nth-child(3){border-left:0;padding-left:0}
+  .pz-exp{grid-template-columns:1fr 1fr}
+  .pz-cta-box{padding:56px 36px}
+}
+@media (max-width:640px){
+  main.pz{font-size:17px}
+  .pz-wrap{padding:0 20px}
+  .pz-hero{padding:56px 0}
+  .pz-facts{grid-template-columns:1fr;margin-top:56px}
+  .pz-fact{padding:22px 0;border-bottom:1px solid var(--line)}
+  .pz-exp{grid-template-columns:1fr}
+  .pz-exp article:nth-child(1){grid-column:auto}
+  .pz-map li{grid-template-columns:1fr;gap:2px}
+  .pz-map li i{display:none}
+  .pz-priority{grid-template-columns:1fr;gap:10px}
+  .pz-tabs{display:flex}
+  .pz-tab{flex:1;padding:12px 10px}
+  .pz-cost{grid-template-columns:1fr}
+  .pz-cta-box{padding:44px 24px;border-radius:28px}
+}
+</style>
+<div id="header-placeholder"></div>
+
+<main class="pz">
+
+<!-- HERO -->
+<section id="hero" class="pz-hero"><div class="pz-wrap">
+  <div class="pz-hero-grid">
+    <div>
+      <h1 class="pz-h1">Your members shouldn’t have to explain themselves twice.</h1>
+      <p class="pz-hero-sub">Perzo identifies the intent of anonymous members the moment they arrive and delivers a personalized experience that resolves their need before they reach a live agent.</p>
+      <div class="pz-actions">
+        <a href="#cta" class="pz-btn pz-btn--solid">Request early access</a>
+        <a href="#roi" class="pz-btn pz-btn--line">See the ROI model</a>
+      </div>
+    </div>
+    <div class="pz-route" aria-label="Example: how Perzo reads an anonymous session">
+      <div class="pz-route-head"><span class="pz-live">Anonymous session</span><span>No login, no PII</span></div>
+      <ul class="pz-signals">
+        <li><span>Referred from</span><span>PA status page</span></li>
+        <li><span>URL path</span><span>/prior-auth</span></li>
+        <li><span>Device</span><span>Mobile</span></li>
+        <li><span>Visit</span><span>First session</span></li>
+      </ul>
+      <div class="pz-match">
+        <small>Matched segment</small>
+        <strong>Prior Auth Inquirer</strong>
+        <p>Hero, CTA and FAQ switch to PA status content on this page load.</p>
+      </div>
+    </div>
+  </div>
+  <div class="pz-facts">
+    <div class="pz-fact"><b>62%</b><span>of member portal sessions begin unauthenticated with zero personalization</span></div>
+    <div class="pz-fact"><b>$11</b><span>average cost differential per contact: live agent vs. self-service resolution</span></div>
+    <div class="pz-fact"><b>90 days</b><span>structured pilot to measurable deflection data and a go / no-go decision</span></div>
+  </div>
+</div></section>
+
+<!-- PROBLEM -->
+<section id="problem" class="pz-problem pz-block"><div class="pz-wrap">
+  <div class="pz-problem-grid">
+    <div>
+      <h2 class="pz-h2">The anonymous member gap is a deflection problem.</h2>
+      <p class="pz-lede">When a member arrives at your portal without logging in, your platform has no context: no role, no intent, no history. Every visitor gets the same generic page. The ones who can’t find what they need in seconds don’t dig deeper. They call.</p>
+      <ul class="pz-reasons">
+        <li>Generic landing pages fail to anticipate why a member arrived, even when clear signals exist.</li>
+        <li>Members who escalate repeat their context to a live agent, compounding cost and friction.</li>
+        <li>No PII or authentication is needed. Sufficient context exists in the anonymous session to act.</li>
+      </ul>
+    </div>
+    <div class="pz-split">
+      <h3>Where anonymous sessions end up today, without Perzo</h3>
+      <div class="pz-bar" role="img" aria-label="About 38% find self-service, about 62% escalate to a live agent">
+        <div class="self"><b>~38%</b><small>Self-service</small></div>
+        <div class="agent"><b>~62%</b><small>Live agent</small></div>
+      </div>
+      <p class="pz-bar-note">Every visitor sees the same generic page.</p>
+      <div class="pz-cost">
+        <div class="bad"><b>$5 – $12</b><span>per live agent contact</span></div>
+        <div class="good"><b>$0.10 – $0.50</b><span>per self-service resolution</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- SEGMENTS & PERSONAS -->
+<section id="features" class="pz-block"><div class="pz-wrap">
+  <h2 class="pz-h2">Two modes. One precise result.</h2>
+  <p class="pz-lede">Perzo delivers personalization through two complementary audience models: system-applied Segments that detect intent automatically, and member-declared Personas that capture intent directly. Both activate before login. Neither requires PII.</p>
+
+  <div class="pz-tabs" role="tablist" aria-label="Audience models">
+    <button class="pz-tab" role="tab" id="tab-seg" aria-controls="panel-seg" aria-selected="true">Segments</button>
+    <button class="pz-tab" role="tab" id="tab-per" aria-controls="panel-per" aria-selected="false" tabindex="-1">Personas</button>
+  </div>
+
+  <div class="pz-panel" role="tabpanel" id="panel-seg" aria-labelledby="tab-seg">
+    <div>
+      <h3>The platform reads the signal.</h3>
+      <p>Perzo evaluates anonymous contextual signals on every page load (referral source, URL path, device type, geographic region, time of visit) and automatically matches the visitor to a pre-configured Segment.</p>
+      <ul class="pz-map">
+        <li><span>Visitor from PA status page</span><i aria-hidden="true">›</i><span>Prior Auth Inquirer</span></li>
+        <li><span>Formulary search referral</span><i aria-hidden="true">›</i><span>Drug Coverage</span></li>
+        <li><span>First session + enrollment referral</span><i aria-hidden="true">›</i><span>New Member</span></li>
+        <li><span>Mobile + urgent-term URL</span><i aria-hidden="true">›</i><span>High-Urgency</span></li>
+      </ul>
+    </div>
+    <figure class="pz-shot" style="margin:0">
+      <picture><source srcset="images/perzo-segment-screen.webp" type="image/webp"><img src="images/perzo-segment-screen.png" alt="Perzo segment builder interface showing geo, behavior, technology, interest, and source targeting options" width="600" height="400" loading="lazy" decoding="async"></picture>
+      <figcaption>Segment Builder</figcaption>
+    </figure>
+  </div>
+
+  <div class="pz-panel" role="tabpanel" id="panel-per" aria-labelledby="tab-per" hidden>
+    <div>
+      <h3>The member states their need.</h3>
+      <p>Where signal confidence is lower, Perzo presents a lightweight role-selection prompt. The member identifies their need in a single tap. Declared intent always supersedes inferred signals.</p>
+      <ul class="pz-map">
+        <li><span>“I need prior auth help”</span><i aria-hidden="true">›</i><span>PA Member</span></li>
+        <li><span>“Check my drug coverage”</span><i aria-hidden="true">›</i><span>Coverage Member</span></li>
+        <li><span>“I’m a new member”</span><i aria-hidden="true">›</i><span>Onboarding</span></li>
+        <li class="plain">Persona selection can persist across sessions. It’s configurable.</li>
+      </ul>
+    </div>
+    <figure class="pz-shot" style="margin:0">
+      <picture><source srcset="images/perzo-persona-screen.webp" type="image/webp"><img src="images/perzo-persona-screen.png" alt="Perzo persona builder interface showing avatar collection, landing page assignment, and persona naming" width="600" height="400" loading="lazy" decoding="async"></picture>
+      <figcaption>Persona Builder</figcaption>
+    </figure>
+  </div>
+
+  <div class="pz-priority">
+    <strong>Persona wins.</strong>
+    <div>
+      <p>When both a Segment match and a Persona selection occur in the same session, the Persona always takes priority. A member who has declared their intent has provided the highest-quality signal available.</p>
+      <p>Session persistence is configurable. Your Perzo admin controls whether Persona selections carry forward across visits.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ROI -->
+<section id="roi" class="pz-roi pz-block"><div class="pz-wrap">
+  <h2 class="pz-h2">Even modest deflection rates produce material savings.</h2>
+  <p class="pz-lede">Every anonymous session that resolves via self-service instead of escalating to a live agent eliminates $5–$12 in contact cost. At the scale of a regional or national PBM, even a 10% deflection rate generates millions annually.</p>
+
+  <div class="pz-roi-figs">
+    <div class="pz-roi-fig"><b>$4.5M</b><span>conservative annual savings at 10% deflection, 500K monthly sessions</span></div>
+    <div class="pz-roi-fig hot"><b>$18M</b><span>optimistic annual savings at 20% deflection, 1M+ monthly sessions</span><em>Based on $7.50 avg cost differential</em></div>
+    <div class="pz-roi-fig"><b>90s</b><span>target time to self-service resolution for a personalized session</span></div>
+    <div class="pz-roi-fig hot"><b>30 days</b><span>to pilot go-live from agreement, with no infrastructure changes</span></div>
+  </div>
+
+  <div class="pz-scenarios">
+    <h3>Deflection scenario model</h3>
+    <table>
+      <thead><tr><th>Scenario</th><th>Monthly sessions</th><th>Deflection</th><th>Est. annual savings</th></tr></thead>
+      <tbody>
+        <tr class="zero"><td>No personalization</td><td>Any</td><td>0%</td><td>$0</td></tr>
+        <tr><td>Conservative</td><td>100,000</td><td>10%</td><td>$900K – $1.4M</td></tr>
+        <tr><td>Midpoint</td><td>250,000</td><td>15%</td><td>$3.4M – $5.4M</td></tr>
+        <tr><td>Optimistic</td><td>500,000</td><td>20%</td><td>$9M – $14.4M</td></tr>
+      </tbody>
+    </table>
+    <p class="pz-table-note">Estimates based on $5–$12 cost differential per deflected contact. Replace with your internal data for precise projections.</p>
+  </div>
+</div></section>
+
+<!-- EXPERIENCES -->
+<section id="experiences" class="pz-block"><div class="pz-wrap">
+  <h2 class="pz-h2">Every Segment and Persona gets a purpose-built experience.</h2>
+  <p class="pz-lede">Content editors configure personalized experiences in the Perzo visual editor: field-by-field overrides for headlines, CTAs, body copy and media, without developer involvement.</p>
+  <div class="pz-exp">
+    <article><h3>Hero and CTA variants</h3><p>Replace the default headline and CTA with context-relevant copy for each Segment.</p><blockquote>“Checking on your prior authorization? Get a real-time status update — no login required.”</blockquote></article>
+    <article><h3>Self-service shortcuts</h3><p>Surface the most relevant tool above the fold: drug lookup, PA status, EOB retrieval.</p><blockquote>Formulary Segment: search tool launches immediately, pre-populated with visit context.</blockquote></article>
+    <article><h3>Onboarding flows</h3><p>New member visitors get a structured experience: benefits overview, account setup, ID card retrieval.</p><blockquote>“Welcome to your benefits. Here’s your member ID and how to find an in-network pharmacy.”</blockquote></article>
+    <article><h3>Contextual messaging</h3><p>Deliver segment-specific alerts and guidance that match the member’s likely question.</p><blockquote>“Prior auth decisions typically take 2–3 business days. Check your status here.”</blockquote></article>
+    <article><h3>Smart escalation routing</h3><p>When a member does escalate, Perzo passes captured context to the handoff so the agent starts with full intent.</p><blockquote>Chat pre-filled: “I’m a new member with a question about my formulary.”</blockquote></article>
+    <article><h3>Zone-level overrides</h3><p>Every zone on the page can carry a Segment or Persona-specific variant, independently configured.</p><blockquote>FAQ section auto-surfaces the 3 most relevant questions for the matched Segment.</blockquote></article>
+  </div>
+</div></section>
+
+<!-- AI -->
+<section id="ai" class="pz-ai pz-block"><div class="pz-wrap">
+  <h2 class="pz-h2">Context-relevant copy, generated at the point of need.</h2>
+  <div class="pz-ai-grid">
+    <div class="pz-draft" aria-label="Example AI Assist draft">
+      <p class="pz-draft-ask">Editor asks AI Assist for a Hero variant</p>
+      <div class="pz-chips">
+        <span><b>Zone:</b> Hero</span>
+        <span><b>Audience:</b> Prior Auth Inquirer</span>
+        <span><b>Tone:</b> reassuring, direct</span>
+      </div>
+      <div class="pz-draft-out">
+        <small>Suggested headline</small>
+        <strong>Your prior authorization is in progress.</strong>
+        <span class="pz-fakebtn">Check my PA status</span>
+      </div>
+      <p class="pz-draft-status">Editor accepts and publishes to the segment. Status: <b>Live</b></p>
+    </div>
+    <div class="pz-ai-list">
+      <div><h3>Segment and Persona context awareness</h3><p>The AI Assist engine receives full audience context (Segment type, Persona, page zone and tone guidelines) before generating a suggestion. Every output is grounded in who the member is.</p></div>
+      <div><h3>Field-level generation</h3><p>Generate a headline. Generate a CTA label. Generate body copy. AI Assist works field by field, and editors review and approve each element independently.</p></div>
+      <div><h3>Healthcare tone compliance</h3><p>The generation prompt enforces your organization’s tone guidelines: clinical accuracy, plain language standards, and regulatory caution for healthcare communications.</p></div>
+      <div><h3>Speed to configuration</h3><p>What previously took a day to produce, variant copy for three segments across six zones, is drafted in minutes. Editors focus on judgment, not blank-page creation.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section id="cta" class="pz-cta"><div class="pz-wrap">
+  <div class="pz-cta-box">
+    <div>
+      <span class="pz-badge">Early access program, limited availability</span>
+      <h2 class="pz-h2">Be first. Pay less. Prove it fast.</h2>
+      <p>Early access organizations receive preferred pricing locked for the life of their contract, plus a dedicated onboarding track designed to reach pilot go-live in 30 days.</p>
+    </div>
+    <div>
+      <a href="about.html#contact" class="pz-btn pz-btn--solid">Request early access</a>
+      <p class="pz-cta-small">No commitment required. We’ll come prepared.</p>
+      <ul class="pz-perks">
+        <li>Preferred pricing, locked for contract life</li>
+        <li>90-day structured pilot</li>
+        <li>Go-live in 30 days</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+</main>
+<div id="footer-placeholder"></div>
+
+<script>
+// Segments / Personas tabs
+(function(){
+  var tabs = document.querySelectorAll(".pz-tab");
+  function select(tab){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute("aria-selected", on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener("click", function(){ select(t); });
+    t.addEventListener("keydown", function(e){
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft"){
+        var next = tabs[(i + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length];
+        select(next); next.focus();
+      }
+    });
+  });
+})();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // innerHTML does not run <script> tags, so re-create them to execute
+    function runScripts(container) {
+        container.querySelectorAll("script").forEach(function (old) {
+            var s = document.createElement("script");
+            for (var i = 0; i < old.attributes.length; i++) s.setAttribute(old.attributes[i].name, old.attributes[i].value);
+            s.text = old.text;
+            old.parentNode.replaceChild(s, old);
+        });
+    }
+
+    var header = fetch("partials/header.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load header");
+            }
+            return response.text();
+        })
+        .then(html => {
+            var el = document.getElementById("header-placeholder");
+            el.innerHTML = html;
+            runScripts(el);
+        })
+        .catch(error => console.error("Header error:", error));
+
+    var footer = fetch("partials/footer.html")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to load footer");
+            }
+            return response.text();
+        })
+        .then(html => {
+            document.getElementById("footer-placeholder").innerHTML = html;
+        })
+        .catch(error => console.error("Footer error:", error));
+
+    // Page scripts that bind to header/footer elements wait for this event
+    Promise.all([header, footer]).then(function () {
+        document.dispatchEvent(new Event("partials:loaded"));
+    });
+});
+</script>
+<script src="js/scripts.js"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-YRVFGC3DFQ")</script>
